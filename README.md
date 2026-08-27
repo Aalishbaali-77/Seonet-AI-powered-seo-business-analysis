@@ -163,3 +163,11 @@ frontend/   Next.js app (src/app, src/features, src/components, src/store)
 docker/     Dockerfiles for backend and frontend
 docker-compose.yml   Local dev stack: postgres, redis, rabbitmq, backend, worker, beat, frontend
 ```
+
+## Author
+
+Alishba Ali — personal project, not affiliated with any company.
+
+## License
+
+No license has been chosen yet — all rights reserved by default until one is added.
