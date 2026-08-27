@@ -29,7 +29,7 @@ export function scoreGradient(value: number | null) {
     return { from: "#7A8B9C", to: "#5A6B7C" };
   }
   if (value >= 90) {
-    return { from: "#5EEAD4", to: "#148A99" };
+    return { from: "#FED7AA", to: "#EA580C" };
   }
   if (value >= 75) {
     return { from: "#38BDF8", to: "#0B4F6C" };
@@ -44,7 +44,7 @@ export function scoreGradient(value: number | null) {
 }
 
 const TONE_GRADIENT = {
-  progress: { from: "#5EEAD4", to: "#148A99" },
+  progress: { from: "#FED7AA", to: "#EA580C" },
   error: { from: "#F87171", to: "#C0392B" },
 };
 

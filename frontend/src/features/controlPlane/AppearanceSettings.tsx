@@ -116,7 +116,7 @@ function AssetCards({
 }
 
 function ColorField({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
-  const safe = /^#[0-9A-Fa-f]{6}$/.test(value) ? value : "#0B4F6C";
+  const safe = /^#[0-9A-Fa-f]{6}$/.test(value) ? value : "#C2410C";
   return (
     <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
       <Box

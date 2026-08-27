@@ -16,8 +16,8 @@ function hex(value: string | undefined, fallback: string) {
 
 export function createSeonetTheme(mode: PaletteMode, brand?: { primary?: string; secondary?: string }) {
   const surface = mode === "light" ? colors.light : colors.dark;
-  const primary = hex(brand?.primary, colors.brand.navy);
-  const secondary = hex(brand?.secondary, colors.brand.teal);
+  const primary = hex(brand?.primary, colors.brand.primary);
+  const secondary = hex(brand?.secondary, colors.brand.orange);
   return createTheme({
     palette: {
       mode,

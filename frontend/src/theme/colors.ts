@@ -1,11 +1,11 @@
 export const colors = {
   brand: {
-    navy: "#0B4F6C",
-    navyDark: "#083A50",
-    navyLight: "#1A6F91",
-    teal: "#148A99",
-    tealDark: "#0F6F7C",
-    pulse: "#2EC4B6",
+    primary: "#C2410C",
+    primaryDark: "#9A3412",
+    primaryLight: "#EA580C",
+    orange: "#F2994A",
+    orangeDark: "#C9701F",
+    pulse: "#FFB577",
   },
   light: {
     background: "#F5F7FA",
@@ -29,6 +29,6 @@ export const colors = {
     success: "#1F7A4D",
     warning: "#B7791F",
     error: "#C0392B",
-    info: "#0B4F6C",
+    info: "#C2410C",
   },
 };

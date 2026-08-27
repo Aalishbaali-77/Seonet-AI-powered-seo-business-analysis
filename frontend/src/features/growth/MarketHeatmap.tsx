@@ -49,7 +49,7 @@ function keyName(name: string) {
 
 function approachColor(approach: Approach, score: number | null) {
   const strength = score == null ? 0.5 : 0.35 + (score / 100) * 0.65;
-  if (approach === "overlap") return `rgba(20, 138, 153, ${strength})`;
+  if (approach === "overlap") return `rgba(194, 65, 12, ${strength})`;
   if (approach === "investigate") return `rgba(245, 158, 11, ${strength})`;
   return `rgba(11, 79, 108, ${strength})`;
 }
@@ -158,7 +158,7 @@ export function MarketHeatmap({
             <EmptyState title="No cities to heat" description="Collect market sources or import orders first. The map does not invent city grades." />
           )}
           <Stack direction="row" spacing={2} sx={{ flexWrap: "wrap" }}>
-            <Typography variant="caption">Teal: deepen (serve + score)</Typography>
+            <Typography variant="caption">Orange: deepen (serve + score)</Typography>
             <Typography variant="caption">Amber: investigate (score, no orders)</Typography>
             <Typography variant="caption">Navy: serving only</Typography>
           </Stack>

@@ -48,7 +48,7 @@ export function MiniLineChart({
   const max = Math.max(...values, 1);
   const min = Math.min(...values, 0);
   const span = Math.max(max - min, 1);
-  const colors = ["#148A99", "#0B4F6C", "#FBBF24"];
+  const colors = ["#EA580C", "#0B4F6C", "#FBBF24"];
   return (
     <Box sx={{ overflowX: "auto" }}>
       <Box component="svg" viewBox={`0 0 ${width} ${height}`} sx={{ width: "100%", minWidth: 280, height }} role="img">

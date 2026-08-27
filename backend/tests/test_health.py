@@ -19,7 +19,7 @@ def test_config_feature_flags(api_client, db):
     assert response.status_code == 200
     assert response.data["product"] == "Seonet"
     assert response.data["branding"]["product_name"] == "Seonet"
-    assert response.data["branding"]["primary_color"] == "#0B4F6C"
+    assert response.data["branding"]["primary_color"] == "#C2410C"
     assert "LEAD_DISCOVERY_ENABLED" in response.data["feature_flags"]
     assert response.data["landing"]["nav"]
     assert isinstance(response.data["packages"], list)

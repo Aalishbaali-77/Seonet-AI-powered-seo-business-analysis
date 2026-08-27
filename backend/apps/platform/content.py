@@ -15,8 +15,8 @@ DEFAULT_APPEARANCE = {
     "login_footer": "Need a workspace? Ask Seonet to provision your tenant.",
     "copyright_text": "© 2026 Seonet. All rights reserved.",
     "default_theme": PlatformAppearance.Theme.LIGHT,
-    "primary_color": "#0B4F6C",
-    "secondary_color": "#148A99",
+    "primary_color": "#C2410C",
+    "secondary_color": "#F2994A",
 }
 
 

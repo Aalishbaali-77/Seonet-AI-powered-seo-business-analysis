@@ -55,8 +55,8 @@ class PlatformAppearance(UUIDPrimaryKeyModel, TimeStampedModel):
         default="© 2026 Seonet. All rights reserved.",
     )
     default_theme = models.CharField(max_length=16, choices=Theme.choices, default=Theme.LIGHT)
-    primary_color = models.CharField(max_length=7, default="#0B4F6C", validators=[HEX_COLOR])
-    secondary_color = models.CharField(max_length=7, default="#148A99", validators=[HEX_COLOR])
+    primary_color = models.CharField(max_length=7, default="#C2410C", validators=[HEX_COLOR])
+    secondary_color = models.CharField(max_length=7, default="#F2994A", validators=[HEX_COLOR])
     logo = models.FileField(upload_to=branding_upload_to, blank=True)
     logo_dark = models.FileField(upload_to=branding_upload_to, blank=True)
     logo_mark = models.FileField(upload_to=branding_upload_to, blank=True)
