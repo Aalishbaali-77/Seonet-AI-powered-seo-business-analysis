@@ -141,19 +141,19 @@ class CrmExportView(TenantCrmMixin, APIView):
         kind = (request.query_params.get("kind") or "deals").strip().lower()
         writers = {
             "companies": (
-                "sipulse-crm-companies.csv",
+                "seonet-crm-companies.csv",
                 ["name", "domain", "industry", "location", "phone", "email", "owner"],
                 Company.objects.for_tenant(request.tenant).select_related("owner"),
                 lambda row: [row.name, row.domain, row.industry, row.location, row.phone, row.email, _owner_csv(row.owner)],
             ),
             "contacts": (
-                "sipulse-crm-contacts.csv",
+                "seonet-crm-contacts.csv",
                 ["first_name", "last_name", "title", "email", "phone", "company", "owner"],
                 Contact.objects.for_tenant(request.tenant).select_related("company", "owner"),
                 lambda row: [row.first_name, row.last_name, row.title, row.email, row.phone, row.company.name if row.company else "", _owner_csv(row.owner)],
             ),
             "deals": (
-                "sipulse-crm-deals.csv",
+                "seonet-crm-deals.csv",
                 ["name", "amount", "currency", "stage", "company", "priority", "expected_close_at", "owner"],
                 Deal.objects.for_tenant(request.tenant).select_related("stage", "company", "owner"),
                 lambda row: [
@@ -168,7 +168,7 @@ class CrmExportView(TenantCrmMixin, APIView):
                 ],
             ),
             "activities": (
-                "sipulse-crm-activities.csv",
+                "seonet-crm-activities.csv",
                 ["title", "kind", "company", "deal", "due_at", "completed_at"],
                 Activity.objects.for_tenant(request.tenant).select_related("company", "deal"),
                 lambda row: [

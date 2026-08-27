@@ -21,7 +21,7 @@ export function TenantSwitcher() {
         value={currentId ?? items[0].id}
         onChange={(event) => {
           const value = event.target.value;
-          window.localStorage.setItem("sipulse.tenant", value);
+          window.localStorage.setItem("seonet.tenant", value);
           dispatch(tenantSelected(value));
         }}
         startAdornment={<BusinessIcon fontSize="small" sx={{ mr: 1, color: "text.secondary" }} />}

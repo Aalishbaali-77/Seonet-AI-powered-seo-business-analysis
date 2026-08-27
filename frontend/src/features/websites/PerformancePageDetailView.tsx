@@ -43,7 +43,7 @@ export function PerformancePageDetailView() {
       <PageHeader
         eyebrow="URL detail"
         title={detail.url}
-        description="All timings below are SIPulse crawl measurements unless a lab source is labeled."
+        description="All timings below are Seonet crawl measurements unless a lab source is labeled."
         actions={
           <Button onClick={() => router.push(`/app/websites/${params.id}/performance`)}>Back to performance</Button>
         }
@@ -52,7 +52,7 @@ export function PerformancePageDetailView() {
         <Paper variant="outlined" sx={{ p: 2, display: "flex", justifyContent: "center" }}>
           <ScoreRing value={detail.page_score} size={96} />
         </Paper>
-        <StatCard label="TTFB" value={`${detail.ttfb_ms} ms`} hint="SIPulse Crawl" />
+        <StatCard label="TTFB" value={`${detail.ttfb_ms} ms`} hint="Seonet Crawl" />
         <StatCard label="Status" value={detail.status_code ?? "—"} />
         <StatCard label="HTML size" value={`${Math.round(detail.html_size_bytes / 1024)} KB`} />
         <StatCard label="Transfer" value={`${Math.round(detail.transfer_bytes / 1024)} KB`} />

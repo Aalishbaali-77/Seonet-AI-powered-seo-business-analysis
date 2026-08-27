@@ -42,7 +42,7 @@ ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1")
 # in production; this derived fallback only keeps dev/test environments working
 # without extra setup.
 FIELD_ENCRYPTION_KEY = env("FIELD_ENCRYPTION_KEY") or base64.urlsafe_b64encode(
-    hashlib.sha256(f"sipulse-field-encryption:{SECRET_KEY}".encode()).digest()
+    hashlib.sha256(f"seonet-field-encryption:{SECRET_KEY}".encode()).digest()
 ).decode()
 
 INSTALLED_APPS = [
@@ -160,7 +160,7 @@ RABBITMQ_URL = env("RABBITMQ_URL", "amqp://guest:guest@localhost:5672//") or "am
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "sipulse-local",
+        "LOCATION": "seonet-local",
     }
 }
 
@@ -238,8 +238,8 @@ CONTENT_SECURITY_POLICY = {
     "connect-src": ["'self'"],
 }
 
-AUTH_COOKIE_ACCESS = "sipulse_access"
-AUTH_COOKIE_REFRESH = "sipulse_refresh"
+AUTH_COOKIE_ACCESS = "seonet_access"
+AUTH_COOKIE_REFRESH = "seonet_refresh"
 AUTH_COOKIE_DOMAIN = env("AUTH_COOKIE_DOMAIN") or None
 AUTH_COOKIE_SECURE = env_bool("AUTH_COOKIE_SECURE", False)
 AUTH_COOKIE_SAMESITE = env("AUTH_COOKIE_SAMESITE", "Lax") or "Lax"
@@ -287,8 +287,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "SIPulse API",
-    "DESCRIPTION": "SIPulse — AI-Powered Business Growth Intelligence Platform",
+    "TITLE": "Seonet API",
+    "DESCRIPTION": "Seonet — AI-Powered Business Growth Intelligence Platform",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True,
@@ -296,7 +296,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 EMAIL_BACKEND = env("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
-DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", "SIPulse <noreply@localhost>")
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", "Seonet <noreply@localhost>")
 
 APP_VERSION = env("APP_VERSION", "0.1.0") or "0.1.0"
 SENTRY_DSN = env("SENTRY_DSN")

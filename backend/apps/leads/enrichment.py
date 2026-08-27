@@ -242,7 +242,7 @@ def _enqueue_enrich_job(job_id: str) -> str:
             connections.close_all()
             enrich_leads(job_id)
 
-        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"sipulse-enrich-{job_id}").start())
+        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"seonet-enrich-{job_id}").start())
         return ""
     async_result = enrich_leads.delay(job_id)
     return async_result.id or ""

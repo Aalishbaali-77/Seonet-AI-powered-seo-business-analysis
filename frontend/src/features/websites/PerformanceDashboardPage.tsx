@@ -55,7 +55,7 @@ export function PerformanceDashboardPage() {
       <PageHeader
         eyebrow="Website intelligence"
         title="Website Performance Intelligence"
-        description="SIPulse scores come from the crawler: TTFB, HTML weight, redirects, compression, caching, and protocol. Browser lab / Core Web Vitals are an optional overlay, never the sole score."
+        description="Seonet scores come from the crawler: TTFB, HTML weight, redirects, compression, caching, and protocol. Browser lab / Core Web Vitals are an optional overlay, never the sole score."
       />
       {audited.length === 0 ? (
         <EmptyState title="No performance crawls yet" description="Add a website and run an audit. Technical Performance is measured from live HTTP, not a Lighthouse placeholder." actionLabel="Add website" onAction={() => router.push("/app/websites/new")} />
@@ -65,7 +65,7 @@ export function PerformanceDashboardPage() {
             <Paper variant="outlined" sx={{ p: 2, display: "flex", justifyContent: "center" }}>
               <Stack spacing={1} sx={{ alignItems: "center" }}>
                 <ScoreRing value={averages.overall} size={120} label="Overall" />
-                <Typography>SIPulse Performance</Typography>
+                <Typography>Seonet Performance</Typography>
               </Stack>
             </Paper>
             <Paper variant="outlined" sx={{ p: 2, display: "flex", justifyContent: "center" }}>
@@ -85,7 +85,7 @@ export function PerformanceDashboardPage() {
             </Paper>
           </Box>
           <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" } }}>
-            <StatCard label="Median TTFB" value={`${averages.ttfb} ms`} hint="SIPulse Crawl" />
+            <StatCard label="Median TTFB" value={`${averages.ttfb} ms`} hint="Seonet Crawl" />
             <StatCard label="Properties audited" value={audited.length} />
             <StatCard label="Data source" value="Crawl" hint="Lighthouse is optional" />
             <StatCard label="UX coverage" value={averages.ux === null ? "Off" : "On"} />
@@ -100,7 +100,7 @@ export function PerformanceDashboardPage() {
                   <Box>
                     <Typography variant="h5">{site.domain}</Typography>
                     <Typography color="text.secondary">
-                      SIPulse {site.last_audit?.scores.performance ?? "—"} · Technical {site.last_audit?.scores.technical_performance ?? site.last_audit?.scores.performance ?? "—"} · TTFB{" "}
+                      Seonet {site.last_audit?.scores.performance ?? "—"} · Technical {site.last_audit?.scores.technical_performance ?? site.last_audit?.scores.performance ?? "—"} · TTFB{" "}
                       {kpis.median_ttfb_ms ?? site.last_audit?.summary?.avg_ttfb_ms ?? "—"} ms
                       {delta !== null ? ` · ${delta > 0 ? "↑ +" : "↓ "}${delta} vs previous crawl` : ""}
                     </Typography>

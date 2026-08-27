@@ -205,7 +205,7 @@ class PasswordResetRequestView(APIView):
             token = default_token_generator.make_token(user)
             reset_url = f"{settings.CORS_ALLOWED_ORIGINS[0] if settings.CORS_ALLOWED_ORIGINS else 'http://localhost:3000'}/reset-password?uid={uid}&token={token}"
             send_mail(
-                subject="Reset your SIPulse password",
+                subject="Reset your Seonet password",
                 message=f"Reset your password: {reset_url}",
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],

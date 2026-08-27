@@ -204,7 +204,7 @@ def answer_question(*, tenant, user, question: str) -> dict:
                     prompt=(
                         "Map the user question to one intent from this allowlist: "
                         + ", ".join(INTENTS)
-                        + ". Return JSON {intent: string}. If it cannot be answered from SIPulse counts, intent must be empty."
+                        + ". Return JSON {intent: string}. If it cannot be answered from Seonet counts, intent must be empty."
                     ),
                     untrusted=question,
                     schema={"type": "object"},
@@ -221,7 +221,7 @@ def answer_question(*, tenant, user, question: str) -> dict:
             "intent": None,
             "facts": [],
             "origin": "none",
-            "why": "This question is not mapped to a SIPulse count, list, or market analysis. Raw SQL is not allowed, and numbers are not invented.",
+            "why": "This question is not mapped to a Seonet count, list, or market analysis. Raw SQL is not allowed, and numbers are not invented.",
         }
         record_ask(tenant=tenant, user=user, payload=payload)
         return payload

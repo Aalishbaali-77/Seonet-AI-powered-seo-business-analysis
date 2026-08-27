@@ -10,7 +10,7 @@ import httpx
 from apps.crawler.metrics import compression_kind, detect_cdn, http_protocol, parse_cache_control, parse_hsts
 from apps.crawler.ssrf import SSRFBlocked, resolve_pinned_target, validate_public_http_url
 
-logger = logging.getLogger("sipulse.crawler")
+logger = logging.getLogger("seonet.crawler")
 
 ALLOWED_HTML_TYPES = {"text/html", "application/xhtml+xml"}
 ALLOWED_TEXT_TYPES = {
@@ -80,7 +80,7 @@ def fetch_document(
     hops = [current]
     redirect_hops: list[dict] = []
     started = time.perf_counter()
-    with httpx.Client(follow_redirects=False, timeout=timeout, headers={"User-Agent": "SIPulseBot/1.0"}) as client:
+    with httpx.Client(follow_redirects=False, timeout=timeout, headers={"User-Agent": "SeonetBot/1.0"}) as client:
         for _ in range(MAX_REDIRECTS + 1):
             hop_started = time.perf_counter()
             try:

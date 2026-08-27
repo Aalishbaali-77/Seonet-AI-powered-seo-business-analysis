@@ -1120,7 +1120,7 @@ export function BusinessEcommercePage() {
       <Stack spacing={3}>
         <PageHeader
           title="E-commerce"
-          description="Connect a store, test, then sync — or download a CSV template, fill it, and import. SIPulse then analyzes served markets, product mix, and expansion evidence from stored rows — not invented demand grades."
+          description="Connect a store, test, then sync — or download a CSV template, fill it, and import. Seonet then analyzes served markets, product mix, and expansion evidence from stored rows — not invented demand grades."
           actions={
             canManage ? (
               <Button

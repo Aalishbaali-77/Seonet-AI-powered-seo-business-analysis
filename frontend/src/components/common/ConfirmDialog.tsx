@@ -45,7 +45,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
     resolveRef.current = null;
   }, []);
 
-  const descriptionId = options.description ? "sipulse-confirm-description" : undefined;
+  const descriptionId = options.description ? "seonet-confirm-description" : undefined;
 
   return (
     <ConfirmContext.Provider value={confirm}>
@@ -55,10 +55,10 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
         onClose={() => finish(false)}
         fullWidth
         maxWidth="xs"
-        aria-labelledby="sipulse-confirm-title"
+        aria-labelledby="seonet-confirm-title"
         aria-describedby={descriptionId}
       >
-        <DialogTitle id="sipulse-confirm-title">{options.title}</DialogTitle>
+        <DialogTitle id="seonet-confirm-title">{options.title}</DialogTitle>
         {options.description ? (
           <DialogContent>
             <DialogContentText id={descriptionId}>{options.description}</DialogContentText>

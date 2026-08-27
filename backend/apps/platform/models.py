@@ -35,8 +35,8 @@ class PlatformAppearance(UUIDPrimaryKeyModel, TimeStampedModel):
         SYSTEM = "system", "System"
 
     singleton_key = models.PositiveSmallIntegerField(default=1, unique=True, editable=False)
-    product_name = models.CharField(max_length=80, default="SIPulse")
-    legal_name = models.CharField(max_length=160, default="SI Global Solutions")
+    product_name = models.CharField(max_length=80, default="Seonet")
+    legal_name = models.CharField(max_length=160, default="Seonet")
     tagline = models.CharField(max_length=180, default="AI-Powered Business Growth Intelligence")
     description = models.TextField(
         blank=True,
@@ -47,12 +47,12 @@ class PlatformAppearance(UUIDPrimaryKeyModel, TimeStampedModel):
     login_footer = models.CharField(
         max_length=240,
         blank=True,
-        default="Need a workspace? Ask SI Global Solutions to provision your tenant.",
+        default="Need a workspace? Ask Seonet to provision your tenant.",
     )
     copyright_text = models.CharField(
         max_length=240,
         blank=True,
-        default="© 2026 SI Global Solutions. All rights reserved.",
+        default="© 2026 Seonet. All rights reserved.",
     )
     default_theme = models.CharField(max_length=16, choices=Theme.choices, default=Theme.LIGHT)
     primary_color = models.CharField(max_length=7, default="#0B4F6C", validators=[HEX_COLOR])

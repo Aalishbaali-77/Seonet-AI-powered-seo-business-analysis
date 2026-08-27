@@ -11,7 +11,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "sipulse-test",
+        "LOCATION": "seonet-test",
     }
 }
 CELERY_TASK_ALWAYS_EAGER = True

@@ -33,7 +33,7 @@ apiClient.interceptors.request.use((config) => {
   if (/\/auth\/(login|register|refresh|password)/.test(url) || url.includes("/platform/")) {
     return config;
   }
-  const tenantId = typeof window !== "undefined" ? window.localStorage.getItem("sipulse.tenant") : null;
+  const tenantId = typeof window !== "undefined" ? window.localStorage.getItem("seonet.tenant") : null;
   if (tenantId) {
     config.headers.set("X-Tenant-ID", tenantId);
   }

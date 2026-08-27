@@ -54,7 +54,7 @@ class Command(BaseCommand):
             owner.save()
             tenant = owner.memberships.select_related("tenant").first()
             if tenant is None:
-                tenant_obj = create_tenant_for_owner(name="SIPulse Demo Workspace", owner=owner)
+                tenant_obj = create_tenant_for_owner(name="Seonet Demo Workspace", owner=owner)
             else:
                 tenant_obj = tenant.tenant
             apply_plan_to_tenant(tenant_obj, Plan.objects.get(code="growth"), status="active")
@@ -66,13 +66,13 @@ class Command(BaseCommand):
                 set_tenant_module(tenant_obj, integrations, enabled=True)
 
             role_users = {
-                "admin": ("admin@demo.sipulse.local", "Jordan", "Lee"),
-                "manager": ("manager@demo.sipulse.local", "Priya", "Shah"),
-                "analyst": ("analyst@demo.sipulse.local", "Noah", "Bennett"),
-                "sales_manager": ("sales.manager@demo.sipulse.local", "Elena", "Costa"),
-                "sales_representative": ("sales@demo.sipulse.local", "Omar", "Hassan"),
-                "marketing_user": ("marketing@demo.sipulse.local", "Sofia", "Martinez"),
-                "viewer": ("viewer@demo.sipulse.local", "Chris", "Ng"),
+                "admin": ("admin@demo.seonet.local", "Jordan", "Lee"),
+                "manager": ("manager@demo.seonet.local", "Priya", "Shah"),
+                "analyst": ("analyst@demo.seonet.local", "Noah", "Bennett"),
+                "sales_manager": ("sales.manager@demo.seonet.local", "Elena", "Costa"),
+                "sales_representative": ("sales@demo.seonet.local", "Omar", "Hassan"),
+                "marketing_user": ("marketing@demo.seonet.local", "Sofia", "Martinez"),
+                "viewer": ("viewer@demo.seonet.local", "Chris", "Ng"),
             }
             for role, (email, first, last) in role_users.items():
                 user, _made = User.objects.get_or_create(
@@ -92,7 +92,7 @@ class Command(BaseCommand):
             Notification.objects.get_or_create(
                 tenant=tenant_obj,
                 user=owner,
-                title="Welcome to SIPulse",
+                title="Welcome to Seonet",
                 defaults={
                     "body": "Your Growth workspace is ready. Add a website to run a real audit, then confirm an ICP before discovery.",
                     "kind": "info",

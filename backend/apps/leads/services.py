@@ -132,7 +132,7 @@ def _enqueue_discovery_job(job_id: str) -> str:
             connections.close_all()
             discover_leads(job_id)
 
-        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"sipulse-leads-{job_id}").start())
+        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"seonet-leads-{job_id}").start())
         return ""
     async_result = discover_leads.delay(job_id)
     return async_result.id or ""

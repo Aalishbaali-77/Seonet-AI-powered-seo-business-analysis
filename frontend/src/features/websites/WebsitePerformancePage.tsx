@@ -131,7 +131,7 @@ export function WebsitePerformancePage() {
         <Paper variant="outlined" sx={{ p: 2, display: "flex", justifyContent: "center" }}>
           <Stack spacing={0.5} sx={{ alignItems: "center" }}>
             <ScoreRing value={perf.scores.overall} size={128} />
-            <Typography>SIPulse Performance</Typography>
+            <Typography>Seonet Performance</Typography>
             <Typography variant="body2" color="text.secondary">
               {snap.band || "—"}
               {delta !== null ? ` · ${delta > 0 ? "↑ +" : "↓ "}${delta}` : ""}
@@ -143,7 +143,7 @@ export function WebsitePerformancePage() {
             <ScoreRing value={perf.scores.technical} size={128} />
             <Typography>Technical Performance</Typography>
             <Typography variant="body2" color="text.secondary">
-              SIPulse Crawl
+              Seonet Crawl
             </Typography>
           </Stack>
         </Paper>
@@ -161,8 +161,8 @@ export function WebsitePerformancePage() {
       {snap.regression?.detected ? <Alert severity="warning">{snap.regression.message || "Performance regression detected."}</Alert> : null}
       <Typography variant="h4">Technical health</Typography>
       <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" } }}>
-        <StatCard label="Median TTFB" value={`${kpis.median_ttfb_ms ?? "—"} ms`} hint="SIPulse Crawl" onClick={() => document.getElementById("url-table")?.scrollIntoView()} />
-        <StatCard label="Average TTFB" value={`${kpis.avg_ttfb_ms ?? "—"} ms`} hint="SIPulse Crawl" />
+        <StatCard label="Median TTFB" value={`${kpis.median_ttfb_ms ?? "—"} ms`} hint="Seonet Crawl" onClick={() => document.getElementById("url-table")?.scrollIntoView()} />
+        <StatCard label="Average TTFB" value={`${kpis.avg_ttfb_ms ?? "—"} ms`} hint="Seonet Crawl" />
         <StatCard label="HTML size" value={formatBytes(kpis.median_html_bytes)} hint="Median document" />
         <StatCard label="Transfer size" value={formatBytes(kpis.transfer_bytes)} />
         <StatCard label="Compression" value={`${kpis.compression_rate ?? 0}%`} />

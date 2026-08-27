@@ -113,8 +113,8 @@ def send_password_setup_email(user) -> None:
     origin = settings.CORS_ALLOWED_ORIGINS[0] if settings.CORS_ALLOWED_ORIGINS else "http://localhost:3000"
     reset_url = f"{origin}/reset-password?uid={uid}&token={token}"
     send_mail(
-        subject="Set up your SIPulse password",
-        message=f"You were added to a SIPulse workspace. Set your password: {reset_url}",
+        subject="Set up your Seonet password",
+        message=f"You were added to a Seonet workspace. Set your password: {reset_url}",
         from_email=settings.DEFAULT_FROM_EMAIL,
         recipient_list=[user.email],
         fail_silently=True,

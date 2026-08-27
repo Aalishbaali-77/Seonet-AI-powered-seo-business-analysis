@@ -73,7 +73,7 @@ class CampaignAudienceExportView(MarketingModule, APIView):
             opportunity_id=request.query_params.get("opportunity"),
         )
         response = HttpResponse(content_type="text/csv; charset=utf-8")
-        response["Content-Disposition"] = 'attachment; filename="sipulse-campaign-audience.csv"'
+        response["Content-Disposition"] = 'attachment; filename="seonet-campaign-audience.csv"'
         writer = csv.writer(response)
         writer.writerow(["name", "email", "phone", "location", "source"])
         for row in rows:
@@ -103,7 +103,7 @@ class CampaignSendView(MarketingModule, APIView):
         campaign.sent_at = timezone.now()
         campaign.send_note = (
             f"Recorded send to {preview['count']} existing audience members. "
-            "No email or SMS was dispatched from SIPulse."
+            "No email or SMS was dispatched from Seonet."
         )
         campaign.save(update_fields=["status", "audience_count", "sent_at", "send_note", "updated_at"])
         from apps.auditlog.services import write_audit

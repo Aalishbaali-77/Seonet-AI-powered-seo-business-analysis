@@ -172,7 +172,7 @@ export function WorkspaceSettingsPage({ section }: { section: "workspace" | "tea
                 <MenuItem value="weekly">Weekly</MenuItem>
               </TextField>
               <TextField select label="Primary CRM" value={profile.primary_crm} onChange={(event) => setProfile({ ...profile, primary_crm: event.target.value })} disabled={!canManageWorkspace}>
-                <MenuItem value="native">SIPulse CRM</MenuItem>
+                <MenuItem value="native">Seonet CRM</MenuItem>
                 <MenuItem value="hubspot">HubSpot</MenuItem>
                 <MenuItem value="odoo">Odoo</MenuItem>
                 <MenuItem value="custom_api">Custom REST / ERP</MenuItem>

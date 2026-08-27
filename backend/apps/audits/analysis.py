@@ -466,7 +466,7 @@ def analyze_crawl(audit: Audit, crawl: Crawl) -> Audit:
             severity=AuditIssue.Severity.LOW,
             category="geo",
             title="Configured target markets are not visible on the homepage",
-            why_it_matters="Markets you entered in SIPulse never appear in visible copy or hreflang.",
+            why_it_matters="Markets you entered in Seonet never appear in visible copy or hreflang.",
             affected_urls=[homepage.url],
             evidence=f"Target markets: {', '.join(markets[:8])}.",
             recommendation="Name the cities or countries you serve in the homepage copy and in LocalBusiness areaServed.",
@@ -696,7 +696,7 @@ def analyze_crawl(audit: Audit, crawl: Crawl) -> Audit:
         "previous_overall": previous_overall,
         "delta": delta,
         "performance_note": snapshot.get("explain", {}).get("overall")
-        or "SIPulse Performance Score is crawl-measured (TTFB, HTML size, redirects, compression, caching, protocol). Lighthouse is optional lab overlay, never the sole score.",
+        or "Seonet Performance Score is crawl-measured (TTFB, HTML size, redirects, compression, caching, protocol). Lighthouse is optional lab overlay, never the sole score.",
         "performance": snapshot,
         "competitors": list(website.competitors or [])[:12],
         "open_critical": audit.issues.filter(severity=AuditIssue.Severity.CRITICAL).count(),

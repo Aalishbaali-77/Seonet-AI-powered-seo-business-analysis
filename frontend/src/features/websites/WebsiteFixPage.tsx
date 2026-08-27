@@ -98,7 +98,7 @@ export function WebsiteFixPage() {
     <Stack spacing={3}>
       <PageHeader
         title="Connect access and apply recommended fixes"
-        description="On demand only. SIPulse does not change the live site until you connect WordPress, cPanel, FTP, or SFTP and confirm. The first completed audit is kept as the baseline. The follow-up crawl compares SEO, AEO, and GEO scores — not Google rankings."
+        description="On demand only. Seonet does not change the live site until you connect WordPress, cPanel, FTP, or SFTP and confirm. The first completed audit is kept as the baseline. The follow-up crawl compares SEO, AEO, and GEO scores — not Google rankings."
       />
       {error ? <ErrorState message={error} onRetry={() => void load()} /> : null}
       {note ? <Alert severity="success">{note}</Alert> : null}
@@ -184,7 +184,7 @@ export function WebsiteFixPage() {
                   </Typography>
                 ))
               ) : (
-                <EmptyState title="Nothing auto-applicable" description="Connect file access or keep using the fix roadmap. SIPulse will not invent copy or change server performance." />
+                <EmptyState title="Nothing auto-applicable" description="Connect file access or keep using the fix roadmap. Seonet will not invent copy or change server performance." />
               )}
               {plan.skipped.slice(0, 8).map((item) => (
                 <Typography key={item.issue_id} color="text.secondary">

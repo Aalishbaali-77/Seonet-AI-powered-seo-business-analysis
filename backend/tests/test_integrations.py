@@ -118,7 +118,7 @@ def test_google_sheets_parses_json_and_hides_key(api_client, user, tenant):
         "/api/v1/integrations/google_sheets/",
         {
             "spreadsheet_id": "https://docs.google.com/spreadsheets/d/1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890/edit",
-            "service_account_json": '{"type":"service_account","client_email":"sipulse-sheets@demo.iam.gserviceaccount.com","private_key":"-----BEGIN PRIVATE KEY-----\\nMIIE\\n-----END PRIVATE KEY-----\\n"}',
+            "service_account_json": '{"type":"service_account","client_email":"seonet-sheets@demo.iam.gserviceaccount.com","private_key":"-----BEGIN PRIVATE KEY-----\\nMIIE\\n-----END PRIVATE KEY-----\\n"}',
             "push_leads": True,
             "push_results": True,
         },
@@ -127,7 +127,7 @@ def test_google_sheets_parses_json_and_hides_key(api_client, user, tenant):
     )
     assert saved.status_code == 200, saved.data
     assert saved.data["config"]["spreadsheet_id"] == "1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890"
-    assert saved.data["config"]["client_email"] == "sipulse-sheets@demo.iam.gserviceaccount.com"
+    assert saved.data["config"]["client_email"] == "seonet-sheets@demo.iam.gserviceaccount.com"
     assert "private_key" not in saved.data["config"]
     assert "BEGIN PRIVATE KEY" not in str(saved.data)
     assert saved.data["setup_steps"]
@@ -138,7 +138,7 @@ def test_google_sheets_parses_json_and_hides_key(api_client, user, tenant):
     listed = api_client.get("/api/v1/integrations/", **headers)
     sheets = next(item for item in listed.data["items"] if item["code"] == "google_sheets")
     assert "audit.completed" in listed.data["webhook_events"]
-    assert sheets["config"]["client_email"] == "sipulse-sheets@demo.iam.gserviceaccount.com"
+    assert sheets["config"]["client_email"] == "seonet-sheets@demo.iam.gserviceaccount.com"
 
     mock_response = MagicMock(status_code=200)
     mock_response.json.return_value = {"spreadsheetId": "1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890", "access_token": "ya29.x"}
@@ -210,7 +210,7 @@ def test_lead_and_audit_push_to_google_sheets(tenant):
         enabled=True,
         config={
             "spreadsheet_id": "1AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
-            "client_email": "sipulse-sheets@demo.iam.gserviceaccount.com",
+            "client_email": "seonet-sheets@demo.iam.gserviceaccount.com",
             "push_leads": True,
             "push_results": True,
         },

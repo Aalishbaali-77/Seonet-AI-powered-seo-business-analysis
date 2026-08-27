@@ -17,8 +17,8 @@ def test_ready(api_client, db):
 def test_config_feature_flags(api_client, db):
     response = api_client.get("/api/v1/config/")
     assert response.status_code == 200
-    assert response.data["product"] == "SIPulse"
-    assert response.data["branding"]["product_name"] == "SIPulse"
+    assert response.data["product"] == "Seonet"
+    assert response.data["branding"]["product_name"] == "Seonet"
     assert response.data["branding"]["primary_color"] == "#0B4F6C"
     assert "LEAD_DISCOVERY_ENABLED" in response.data["feature_flags"]
     assert response.data["landing"]["nav"]

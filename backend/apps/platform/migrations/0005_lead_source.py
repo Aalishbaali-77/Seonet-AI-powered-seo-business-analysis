@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='platformappearance',
             name='copyright_text',
-            field=models.CharField(blank=True, default='© 2026 SI Global Solutions. All rights reserved.', max_length=240),
+            field=models.CharField(blank=True, default='© 2026 Seonet. All rights reserved.', max_length=240),
         ),
         migrations.AlterField(
             model_name='platformappearance',
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='platformappearance',
             name='login_footer',
-            field=models.CharField(blank=True, default='Need a workspace? Ask SI Global Solutions to provision your tenant.', max_length=240),
+            field=models.CharField(blank=True, default='Need a workspace? Ask Seonet to provision your tenant.', max_length=240),
         ),
         migrations.AlterField(
             model_name='platformappearance',

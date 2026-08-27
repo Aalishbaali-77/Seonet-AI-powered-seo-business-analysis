@@ -40,7 +40,7 @@ export function AppSidebar({
   const skipPersist = useRef(true);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("sipulse.sidebarCollapsed");
+    const stored = window.localStorage.getItem("seonet.sidebarCollapsed");
     if (stored === "1") {
       dispatch(sidebarCollapsedToggled(true));
     }
@@ -51,7 +51,7 @@ export function AppSidebar({
       skipPersist.current = false;
       return;
     }
-    window.localStorage.setItem("sipulse.sidebarCollapsed", collapsed ? "1" : "0");
+    window.localStorage.setItem("seonet.sidebarCollapsed", collapsed ? "1" : "0");
   }, [collapsed]);
 
   const contents = (rail: boolean) => (

@@ -8,7 +8,7 @@ import httpx
 from apps.audits.performance_config import threshold_score
 from apps.crawler.ssrf import SSRFBlocked, validate_public_http_url
 
-logger = logging.getLogger("sipulse.performance")
+logger = logging.getLogger("seonet.performance")
 
 PSI_URL = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 PROBE_URL = "https://www.google.com/"
@@ -126,7 +126,7 @@ def fetch_lab_metrics(url: str) -> dict | None:
         "fcp_ms": fcp,
         "tbt_ms": tbt,
         "si_ms": si,
-        "note": "Optional PageSpeed Insights overlay. It does not replace SIPulse crawl TTFB or the technical score.",
+        "note": "Optional PageSpeed Insights overlay. It does not replace Seonet crawl TTFB or the technical score.",
     }
 
 

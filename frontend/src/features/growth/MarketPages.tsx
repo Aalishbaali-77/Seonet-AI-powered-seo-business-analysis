@@ -126,7 +126,7 @@ function CitationList({ citations }: { citations: MarketCitation[] }) {
     return (
       <EmptyState
         title="No citations yet"
-        description="Import orders or ingest market signals. SIPulse does not invent filings or city grades."
+        description="Import orders or ingest market signals. Seonet does not invent filings or city grades."
       />
     );
   }

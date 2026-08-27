@@ -130,7 +130,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "purpose": "Pakistan B2B directory. Wired only through a licensed search API you configure.",
         "is_enabled": False,
         "sort_order": 18,
-        "setup_hint": "YellowPage.pk does not publish a public search API. After you have licensed access, paste the search endpoint and API key here. SIPulse will not scrape yellowpage.pk.",
+        "setup_hint": "YellowPage.pk does not publish a public search API. After you have licensed access, paste the search endpoint and API key here. Seonet will not scrape yellowpage.pk.",
         "public_config": {
             "env_keys": ["YELLOWPAGE_PK_API_KEY"],
             "homepage_url": "https://yellowpage.pk/",
@@ -153,7 +153,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "purpose": "Accredited US/Canada businesses via a licensed BBB API endpoint you configure.",
         "is_enabled": False,
         "sort_order": 19,
-        "setup_hint": "BBB business search is partner-licensed. Paste the official API base search URL and key. SIPulse will not scrape bbb.org.",
+        "setup_hint": "BBB business search is partner-licensed. Paste the official API base search URL and key. Seonet will not scrape bbb.org.",
         "public_config": {
             "env_keys": ["BBB_API_KEY"],
             "homepage_url": "https://www.bbb.org/",
@@ -176,7 +176,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "purpose": "US small-business directory via a licensed search API you configure.",
         "is_enabled": False,
         "sort_order": 21,
-        "setup_hint": "Manta does not publish a public search API. Paste a licensed search endpoint and key. SIPulse will not scrape manta.com.",
+        "setup_hint": "Manta does not publish a public search API. Paste a licensed search endpoint and key. Seonet will not scrape manta.com.",
         "public_config": {
             "env_keys": ["MANTA_API_KEY"],
             "homepage_url": "https://www.manta.com/",
@@ -199,7 +199,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "purpose": "Find published work emails for a company domain via the Hunter Domain Search API.",
         "is_enabled": False,
         "sort_order": 30,
-        "setup_hint": "Create a Hunter API key at hunter.io and paste it here. SIPulse stores only emails Hunter returns.",
+        "setup_hint": "Create a Hunter API key at hunter.io and paste it here. Seonet stores only emails Hunter returns.",
         "public_config": {
             "env_keys": ["HUNTER_API_KEY"],
             "homepage_url": "https://hunter.io/",
@@ -230,7 +230,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "purpose": "Organization enrichment from a domain via the Apollo API.",
         "is_enabled": False,
         "sort_order": 32,
-        "setup_hint": "Paste an Apollo API key. SIPulse does not invent contacts Apollo does not return.",
+        "setup_hint": "Paste an Apollo API key. Seonet does not invent contacts Apollo does not return.",
         "public_config": {
             "env_keys": ["APOLLO_API_KEY"],
             "homepage_url": "https://www.apollo.io/",
@@ -300,7 +300,7 @@ DEFAULT_LEAD_SOURCES: list[dict] = [
         "provider": "google_pagespeed",
         "category": "diagnostics",
         "display_name": "PageSpeed Insights",
-        "purpose": "Optional lab/field overlay for LCP, INP, and CLS. Never replaces SIPulse crawl TTFB or the technical score.",
+        "purpose": "Optional lab/field overlay for LCP, INP, and CLS. Never replaces Seonet crawl TTFB or the technical score.",
         "is_enabled": False,
         "sort_order": 90,
         "setup_hint": "In Google Cloud Console enable PageSpeed Insights API, create an API key, and paste it here. Env fallback: PAGESPEED_API_KEY or GOOGLE_PAGESPEED_API_KEY.",

@@ -12,7 +12,7 @@ class JSONFormatter(logging.Formatter):
         payload = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "level": record.levelname,
-            "service": getattr(record, "service", "sipulse-api"),
+            "service": getattr(record, "service", "seonet-api"),
             "logger": record.name,
             "message": record.getMessage(),
             "request_id": getattr(record, "request_id", "") or get_request_id(),

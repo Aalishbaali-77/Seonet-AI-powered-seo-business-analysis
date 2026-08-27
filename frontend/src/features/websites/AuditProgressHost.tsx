@@ -132,11 +132,11 @@ export function AuditProgressHost() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              "@keyframes sipulseFab": {
+              "@keyframes seonetFab": {
                 "0%, 100%": { boxShadow: "0 8px 24px rgba(20,138,153,0.28)" },
                 "50%": { boxShadow: "0 8px 28px rgba(20,138,153,0.5)" },
               },
-              animation: blocking ? "sipulseFab 2s ease-in-out infinite" : "none",
+              animation: blocking ? "seonetFab 2s ease-in-out infinite" : "none",
             }}
           >
             <ScoreRing

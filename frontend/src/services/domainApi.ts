@@ -102,7 +102,7 @@ export const leadApi = {
       .then((res) => res.data),
   enrichMany: (leadIds?: string[]) =>
     apiClient.post<{ job: Job }>("/leads/enrich/", leadIds?.length ? { lead_ids: leadIds } : {}).then((res) => res.data),
-  exportCsv: (params?: Record<string, string>) => downloadCsv("/leads/export/", "sipulse-leads.csv", params),
+  exportCsv: (params?: Record<string, string>) => downloadCsv("/leads/export/", "seonet-leads.csv", params),
 };
 
 export const crmApi = {
@@ -115,7 +115,7 @@ export const crmApi = {
   updateStage: (pipelineId: string, id: string, payload: Partial<Stage>) =>
     apiClient.patch<Stage>(`/crm/pipelines/${pipelineId}/stages/${id}/`, payload).then((res) => res.data),
   deleteStage: (pipelineId: string, id: string) => apiClient.delete(`/crm/pipelines/${pipelineId}/stages/${id}/`),
-  exportCsv: (kind: "companies" | "contacts" | "deals" | "activities") => downloadCsv("/crm/export/", `sipulse-crm-${kind}.csv`, { kind }),
+  exportCsv: (kind: "companies" | "contacts" | "deals" | "activities") => downloadCsv("/crm/export/", `seonet-crm-${kind}.csv`, { kind }),
   assignees: () => apiClient.get<CrmAssignee[]>("/crm/assignees/").then((res) => res.data),
   funnel: (params?: Record<string, string>) =>
     apiClient
@@ -326,7 +326,7 @@ export const businessApi = {
     link.href = url;
     const disposition = String(res.headers["content-disposition"] ?? "");
     const match = disposition.match(/filename="?([^"]+)"?/);
-    link.download = match?.[1] ?? `sipulse-${kind}-template.csv`;
+    link.download = match?.[1] ?? `seonet-${kind}-template.csv`;
     link.click();
     URL.revokeObjectURL(url);
   },
@@ -376,7 +376,7 @@ export const marketApi = {
     link.href = url;
     const disposition = String(res.headers["content-disposition"] ?? "");
     const match = disposition.match(/filename="?([^"]+)"?/);
-    link.download = match?.[1] ?? "sipulse-market-signals-template.csv";
+    link.download = match?.[1] ?? "seonet-market-signals-template.csv";
     link.click();
     URL.revokeObjectURL(url);
   },
@@ -424,7 +424,7 @@ export const marketingApi = {
   send: (id: string) => apiClient.post<Campaign>(`/marketing/campaigns/${id}/send/`).then((res) => res.data),
   preview: (params: Record<string, string>) =>
     apiClient.get<{ count: number; label: string; origin: string; why: string }>("/marketing/audiences/preview/", { params }).then((res) => res.data),
-  exportAudience: (params: Record<string, string>) => downloadCsv("/marketing/audiences/export/", "sipulse-campaign-audience.csv", params),
+  exportAudience: (params: Record<string, string>) => downloadCsv("/marketing/audiences/export/", "seonet-campaign-audience.csv", params),
 };
 
 export const reportsApi = {

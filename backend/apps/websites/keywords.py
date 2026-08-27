@@ -18,7 +18,7 @@ PROVIDER_LABELS = {
 }
 
 KEYWORD_AI_PROMPT = (
-    "You are a SIPulse SEO keyword advisor. "
+    "You are a Seonet SEO keyword advisor. "
     "Return JSON {suggestions: [{keyword, intent, why}]}. "
     "intent must be seo, aeo, or geo. "
     "Suggest the strongest extra search queries for this business using only FACT lines: "
@@ -139,7 +139,7 @@ def _heuristic_suggestions(website, keywords: list[str], results: list[dict] | N
                 "keyword": f"best {keyword}",
                 "intent": "seo",
                 "origin": "recommendation",
-                "why": "Modifier of a stored keyword. SIPulse does not claim this will reach page one.",
+                "why": "Modifier of a stored keyword. Seonet does not claim this will reach page one.",
             }
         )
         if markets:

@@ -232,7 +232,7 @@ def _hubspot_headers(connection: CRMConnection) -> dict:
 def _hubspot_lead(connection: CRMConnection, payload: dict) -> None:
     domain = _domain(payload.get("website") or "")
     properties = {
-        "name": payload.get("company_name") or domain or "SIPulse lead",
+        "name": payload.get("company_name") or domain or "Seonet lead",
         "phone": payload.get("phone") or "",
         "website": payload.get("website") or "",
         "description": payload.get("notes") or payload.get("ai_summary") or "",
@@ -261,7 +261,7 @@ def _hubspot_lead(connection: CRMConnection, payload: dict) -> None:
 def _hubspot_result(connection: CRMConnection, payload: dict) -> None:
     scores = payload.get("scores") or {}
     body = (
-        f"SIPulse audit for {payload.get('website') or payload.get('domain')}\n"
+        f"Seonet audit for {payload.get('website') or payload.get('domain')}\n"
         f"Overall: {payload.get('overall_score')}\n"
         f"Technical SEO: {scores.get('technical_seo')}\n"
         f"On-page SEO: {scores.get('on_page_seo')}\n"
@@ -270,7 +270,7 @@ def _hubspot_result(connection: CRMConnection, payload: dict) -> None:
         f"Pages: {payload.get('pages_crawled')} · Issues: {payload.get('issue_count')}"
     )
     domain = payload.get("domain") or _domain(payload.get("website") or "")
-    properties = {"name": payload.get("name") or domain or "SIPulse audit"}
+    properties = {"name": payload.get("name") or domain or "Seonet audit"}
     if domain:
         properties["domain"] = domain
     if payload.get("website"):
@@ -343,7 +343,7 @@ def _odoo_execute(base_url: str, database: str, uid: int, api_key: str, model: s
 def _odoo_lead(connection: CRMConnection, payload: dict) -> None:
     base_url, database, uid, api_key = _odoo_uid(connection)
     values = {
-        "name": payload.get("company_name") or "SIPulse lead",
+        "name": payload.get("company_name") or "Seonet lead",
         "is_company": True,
         "website": payload.get("website") or "",
         "phone": payload.get("phone") or "",
@@ -357,12 +357,12 @@ def _odoo_result(connection: CRMConnection, payload: dict) -> None:
     base_url, database, uid, api_key = _odoo_uid(connection)
     scores = payload.get("scores") or {}
     comment = (
-        f"SIPulse audit overall {payload.get('overall_score')}. "
+        f"Seonet audit overall {payload.get('overall_score')}. "
         f"Technical SEO {scores.get('technical_seo')}, AEO {scores.get('aeo')}, GEO {scores.get('geo')}. "
         f"Pages {payload.get('pages_crawled')}, issues {payload.get('issue_count')}."
     )
     values = {
-        "name": payload.get("name") or payload.get("domain") or "SIPulse audit",
+        "name": payload.get("name") or payload.get("domain") or "Seonet audit",
         "is_company": True,
         "website": payload.get("website") or "",
         "comment": comment,
@@ -381,7 +381,7 @@ def _custom_post(connection: CRMConnection, payload: dict, *, path_key: str, def
     target = validate_public_http_url(urljoin(root if root.endswith("/") else root + "/", path.lstrip("/")))
     header_name = (public.get("auth_header") or "Authorization").strip() or "Authorization"
     headers = {header_name: api_key if header_name.lower() != "authorization" else f"Bearer {api_key}"}
-    body = {"event": event, "source": "sipulse", "data": payload}
+    body = {"event": event, "source": "seonet", "data": payload}
     with _client() as client:
         response = client.post(target, json=body, headers=headers)
     _raise_http("The API", response)
@@ -391,7 +391,7 @@ def _webhook_post(connection: CRMConnection, event: str, payload: dict) -> None:
     public = connection.config or {}
     secret = (connection.encrypted_config or {}).get("signing_secret") or ""
     target = validate_public_http_url(public.get("url") or "")
-    body = json.dumps({"event": event, "source": "sipulse", "data": payload}, default=str).encode()
+    body = json.dumps({"event": event, "source": "seonet", "data": payload}, default=str).encode()
     signature = hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()
     with _client() as client:
         response = client.post(
@@ -399,7 +399,7 @@ def _webhook_post(connection: CRMConnection, event: str, payload: dict) -> None:
             content=body,
             headers={
                 "Content-Type": "application/json",
-                "X-SIPulse-Signature": f"sha256={signature}",
+                "X-Seonet-Signature": f"sha256={signature}",
             },
         )
     _raise_http("The webhook", response)

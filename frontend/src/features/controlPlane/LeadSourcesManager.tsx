@@ -17,23 +17,23 @@ const GROUPS: Array<{ key: LeadSource["category"]; title: string; description: s
     key: "discovery",
     title: "Lead discovery",
     description:
-      "Official directory APIs and licensed feeds. Enable every source you have credentials for; discovery queries all enabled sources. Sites without a public API need a search URL you control — SIPulse does not scrape directory websites.",
+      "Official directory APIs and licensed feeds. Enable every source you have credentials for; discovery queries all enabled sources. Sites without a public API need a search URL you control — Seonet does not scrape directory websites.",
   },
   {
     key: "enrichment",
     title: "Lead enrichment",
     description:
-      "Hunter, Clearbit, and Apollo fill published emails and firmographics from a domain. Wikidata is an open SPARQL lookup. The lead’s own website is always fetched when a URL is stored. SIPulse does not invent contact fields or scrape google.com.",
+      "Hunter, Clearbit, and Apollo fill published emails and firmographics from a domain. Wikidata is an open SPARQL lookup. The lead’s own website is always fetched when a URL is stored. Seonet does not invent contact fields or scrape google.com.",
   },
   {
     key: "ai",
     title: "AI models",
-    description: "OpenAI, Claude, Grok, and Gemini. One platform key is shared by every workspace. Enable Claude (or another model) here; tenants never see the secret. Token use is metered per tenant against that workspace’s package AI credits. If more than one model is enabled, SIPulse uses the first source that has a stored key (OpenAI, then Claude, then Grok, then Gemini).",
+    description: "OpenAI, Claude, Grok, and Gemini. One platform key is shared by every workspace. Enable Claude (or another model) here; tenants never see the secret. Token use is metered per tenant against that workspace’s package AI credits. If more than one model is enabled, Seonet uses the first source that has a stored key (OpenAI, then Claude, then Grok, then Gemini).",
   },
   {
     key: "diagnostics",
     title: "Diagnostics",
-    description: "PageSpeed Insights overlay, plus licensed Google Custom Search or SerpAPI for keyword first-page checks. SIPulse does not scrape google.com.",
+    description: "PageSpeed Insights overlay, plus licensed Google Custom Search or SerpAPI for keyword first-page checks. Seonet does not scrape google.com.",
   },
 ];
 

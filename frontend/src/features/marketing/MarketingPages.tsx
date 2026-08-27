@@ -76,7 +76,7 @@ export function CampaignListPage() {
     <Stack spacing={3}>
       <PageHeader
         title="Marketing"
-        description="Campaigns use existing lead lists, imported customers, or opportunity-linked leads. Audience size is a stored count. Export the audience CSV to send in your own channel. SIPulse does not invent open rates."
+        description="Campaigns use existing lead lists, imported customers, or opportunity-linked leads. Audience size is a stored count. Export the audience CSV to send in your own channel. Seonet does not invent open rates."
         actions={
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1} sx={{ flexWrap: "wrap" }}>
             <TextField size="small" label="Campaign name" value={name} onChange={(event) => setName(event.target.value)} />

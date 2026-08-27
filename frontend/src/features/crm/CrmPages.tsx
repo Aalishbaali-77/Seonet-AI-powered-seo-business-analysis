@@ -471,7 +471,7 @@ export function CrmCompaniesPage() {
           ]}
         />
       ) : (
-        <EmptyState title="No companies" description="Promote a SIPulse lead or add a company here." />
+        <EmptyState title="No companies" description="Promote a Seonet lead or add a company here." />
       )}
     </Stack>
   );
@@ -823,7 +823,7 @@ export function CrmLeadsPage() {
 
   return (
     <Stack spacing={3}>
-      <PageHeader title="CRM leads" description="SIPulse leads promoted into this CRM. This is not a second lead-generation product." />
+      <PageHeader title="CRM leads" description="Seonet leads promoted into this CRM. This is not a second lead-generation product." />
       {rows.length ? (
         <ResponsiveDataList
           rows={rows}

@@ -46,7 +46,7 @@ export function IntelligenceReportsPage() {
                   const url = URL.createObjectURL(blob);
                   const link = document.createElement("a");
                   link.href = url;
-                  link.download = "sipulse-reports.json";
+                  link.download = "seonet-reports.json";
                   link.click();
                   URL.revokeObjectURL(url);
                 })

@@ -99,7 +99,7 @@ export function WebsiteListPage() {
       {status === "ready" && items.length === 0 && !error ? (
         <EmptyState
           title="No websites yet"
-          description="Add your first website to start your SIPulse intelligence journey."
+          description="Add your first website to start your Seonet intelligence journey."
           actionLabel="Add Website"
           onAction={() => router.push("/app/websites/new")}
         />

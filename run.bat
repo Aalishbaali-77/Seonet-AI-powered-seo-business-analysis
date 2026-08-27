@@ -7,5 +7,5 @@ if not exist ".venv\Scripts\activate.bat" (
   exit /b 1
 )
 
-start "SIPulse Backend" cmd /k "call .venv\Scripts\activate.bat && cd backend && python manage.py runserver"
-start "SIPulse Frontend" cmd /k "cd frontend && npm start"
+start "Seonet Backend" cmd /k "call .venv\Scripts\activate.bat && cd backend && python manage.py runserver"
+start "Seonet Frontend" cmd /k "cd frontend && npm start"

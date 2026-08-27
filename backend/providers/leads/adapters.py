@@ -6,7 +6,7 @@ import httpx
 
 from providers.ai.base import ProviderUnavailable
 
-USER_AGENT = "SIPulseBot/1.0 (+https://sipulse.local)"
+USER_AGENT = "SeonetBot/1.0 (+https://seonet.local)"
 
 
 def _get(url: str, *, params: dict | None = None, headers: dict | None = None, timeout: int = 20) -> dict | list:
@@ -340,7 +340,7 @@ class HttpJsonLeadAdapter:
             return []
         if not url:
             raise ProviderUnavailable(
-                f"{self.source.display_name} has no licensed search URL. Add one in the platform console. SIPulse does not scrape directory websites."
+                f"{self.source.display_name} has no licensed search URL. Add one in the platform console. Seonet does not scrape directory websites."
             )
         if self.source.requires_key and not api_key:
             return []

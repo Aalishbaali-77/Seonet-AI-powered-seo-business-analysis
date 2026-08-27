@@ -17,8 +17,8 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SIPulse — AI-Powered Business Growth Intelligence",
-  description: "Website intelligence, SEO/AEO/GEO audits, lead discovery, and native CRM in one tenant. Built by SI Global Solutions.",
+  title: "Seonet — AI-Powered Business Growth Intelligence",
+  description: "Website intelligence, SEO/AEO/GEO audits, lead discovery, and native CRM in one tenant. Built by Seonet.",
   icons: {
     icon: "/favicon.png",
   },

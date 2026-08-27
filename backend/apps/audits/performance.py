@@ -8,7 +8,7 @@ from apps.audits.models import Audit, AuditIssue, AuditRecommendation
 from apps.audits.performance_config import band_label, resolve_performance_config, threshold_score
 from apps.crawler.metrics import is_compressible
 
-logger = logging.getLogger("sipulse.performance")
+logger = logging.getLogger("seonet.performance")
 
 
 def _clamp(value: float) -> int:
@@ -183,11 +183,11 @@ def build_performance_snapshot(pages, *, website=None, previous=None) -> dict:
     weights = cfg["weights"]
     if ux is None:
         overall = technical
-        overall_note = "SIPulse Performance Score is 100% technical crawl data. Browser lab / field CWV was not available."
+        overall_note = "Seonet Performance Score is 100% technical crawl data. Browser lab / field CWV was not available."
     else:
         overall = _clamp(technical * float(weights["technical"]) + ux * float(weights["ux"]))
         overall_note = (
-            f"SIPulse Performance Score = {int(float(weights['technical']) * 100)}% technical crawl "
+            f"Seonet Performance Score = {int(float(weights['technical']) * 100)}% technical crawl "
             f"+ {int(float(weights['ux']) * 100)}% UX / Core Web Vitals ({ux_source} data)."
         )
     avg_ttfb = int(sum(ttfbs) / len(ttfbs)) if ttfbs else 0
@@ -220,10 +220,10 @@ def build_performance_snapshot(pages, *, website=None, previous=None) -> dict:
             "overall": overall_note,
             "main_problems": list(dict.fromkeys(explanations))[:6],
             "data_sources": {
-                "ttfb": "SIPulse Crawl",
-                "html_size": "SIPulse Crawl",
-                "compression": "SIPulse Crawl",
-                "redirects": "SIPulse Crawl",
+                "ttfb": "Seonet Crawl",
+                "html_size": "Seonet Crawl",
+                "compression": "Seonet Crawl",
+                "redirects": "Seonet Crawl",
                 "lcp": "Browser Lab" if ux_source == "lab" else ("Field Data" if ux_source == "field" else "Unavailable"),
             },
         },
@@ -504,7 +504,7 @@ def apply_performance_issues(audit: Audit, snapshot: dict) -> None:
             severity=AuditIssue.Severity.HIGH,
             category="performance",
             title="Performance regression detected.",
-            why_it_matters="This crawl is materially worse than the previous crawl on one or more SIPulse performance metrics.",
+            why_it_matters="This crawl is materially worse than the previous crawl on one or more Seonet performance metrics.",
             affected_urls=[],
             evidence="; ".join(item["label"] for item in snapshot["regression"]["changes"] if item.get("regression")),
             recommendation="Compare this crawl with the previous crawl and fix the regressed metrics before they become the new baseline.",
@@ -549,7 +549,7 @@ def enrich_performance_recommendations(audit: Audit) -> None:
                 prompt=(
                     "Write one short operator paragraph. Use only the evidence below. "
                     "Do not invent timings, scores, URLs, or Core Web Vitals. "
-                    "Do not treat Lighthouse as the source of SIPulse scores. "
+                    "Do not treat Lighthouse as the source of Seonet scores. "
                     'Return JSON {"guidance": "..."}.'
                 ),
                 untrusted=f"Title: {rec.title}\nEvidence: {rec.verified_finding}\nRecommendation: {rec.recommendation}",

@@ -6,10 +6,10 @@ import { DEFAULT_FAVICON, resolveFaviconSrc } from "@/components/branding/BrandM
 import { useAppSelector } from "@/store/hooks";
 
 function upsertLink(rel: string, href: string, extra?: Record<string, string>) {
-  let link = document.querySelector(`link[data-sipulse-brand="${rel}"]`) as HTMLLinkElement | null;
+  let link = document.querySelector(`link[data-seonet-brand="${rel}"]`) as HTMLLinkElement | null;
   if (!link) {
     link = document.createElement("link");
-    link.setAttribute("data-sipulse-brand", rel);
+    link.setAttribute("data-seonet-brand", rel);
     document.head.appendChild(link);
   }
   link.rel = rel;
@@ -38,8 +38,8 @@ export function BrandingApplier() {
       upsertLink("apple-touch-icon", touch);
     }
 
-    document.documentElement.style.setProperty("--sipulse-primary", branding.primary_color);
-    document.documentElement.style.setProperty("--sipulse-secondary", branding.secondary_color);
+    document.documentElement.style.setProperty("--seonet-primary", branding.primary_color);
+    document.documentElement.style.setProperty("--seonet-secondary", branding.secondary_color);
   }, [branding]);
 
   return null;

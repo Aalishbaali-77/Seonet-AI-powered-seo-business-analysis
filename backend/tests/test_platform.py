@@ -147,7 +147,7 @@ def test_platform_admin_updates_appearance(db):
 
     current = client.get("/api/v1/platform/appearance/")
     assert current.status_code == 200
-    assert current.data["product_name"] == "SIPulse"
+    assert current.data["product_name"] == "Seonet"
     assert current.data["logo_nav_url"] is None
     assert current.data["logo_sidebar_url"] is None
     assert current.data["logo_footer_url"] is None
@@ -157,7 +157,7 @@ def test_platform_admin_updates_appearance(db):
         "/api/v1/platform/appearance/",
         {
             "product_name": "PulseOS",
-            "legal_name": "SI Global Solutions",
+            "legal_name": "Seonet",
             "tagline": "Growth intelligence",
             "primary_color": "#123456",
             "secondary_color": "#654321",

@@ -23,12 +23,12 @@ body {
     display: none !important;
   }
 
-  .sipulse-print-header,
-  .sipulse-print-footer {
+  .seonet-print-header,
+  .seonet-print-footer {
     display: flex !important;
   }
 
-  .sipulse-print-root {
+  .seonet-print-root {
     padding: 0 !important;
   }
 }

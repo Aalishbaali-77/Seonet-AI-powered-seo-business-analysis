@@ -2,15 +2,15 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: sipulse
-      POSTGRES_USER: sipulse
-      POSTGRES_PASSWORD: sipulse
+      POSTGRES_DB: seonet
+      POSTGRES_USER: seonet
+      POSTGRES_PASSWORD: seonet
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sipulse"]
+      test: ["CMD-SHELL", "pg_isready -U seonet"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -28,9 +28,9 @@ services:
   rabbitmq:
     image: rabbitmq:3.13-management-alpine
     environment:
-      RABBITMQ_DEFAULT_USER: sipulse
-      RABBITMQ_DEFAULT_PASS: sipulse
-      RABBITMQ_DEFAULT_VHOST: sipulse
+      RABBITMQ_DEFAULT_USER: seonet
+      RABBITMQ_DEFAULT_PASS: seonet
+      RABBITMQ_DEFAULT_VHOST: seonet
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -48,10 +48,10 @@ services:
       - .env.example
     environment:
       DJANGO_ENV: development
-      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      DATABASE_URL: postgres://seonet:seonet@postgres:5432/seonet
       REDIS_URL: redis://redis:6379/0
-      RABBITMQ_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
-      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      RABBITMQ_URL: amqp://seonet:seonet@rabbitmq:5672/seonet
+      CELERY_BROKER_URL: amqp://seonet:seonet@rabbitmq:5672/seonet
       CELERY_RESULT_BACKEND: redis://redis:6379/1
     ports:
       - "8000:8000"
@@ -74,9 +74,9 @@ services:
       - .env.example
     environment:
       DJANGO_ENV: development
-      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      DATABASE_URL: postgres://seonet:seonet@postgres:5432/seonet
       REDIS_URL: redis://redis:6379/0
-      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_BROKER_URL: amqp://seonet:seonet@rabbitmq:5672/seonet
       CELERY_RESULT_BACKEND: redis://redis:6379/1
     depends_on:
       - backend
@@ -92,9 +92,9 @@ services:
       - .env.example
     environment:
       DJANGO_ENV: development
-      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      DATABASE_URL: postgres://seonet:seonet@postgres:5432/seonet
       REDIS_URL: redis://redis:6379/0
-      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_BROKER_URL: amqp://seonet:seonet@rabbitmq:5672/seonet
       CELERY_RESULT_BACKEND: redis://redis:6379/1
     depends_on:
       - backend

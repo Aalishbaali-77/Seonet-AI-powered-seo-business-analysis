@@ -66,7 +66,7 @@ def gather_facts(tenant, domain: str) -> list[str]:
         rows = Campaign.objects.for_tenant(tenant)
         facts.append(f"{rows.count()} campaigns are recorded.")
         facts.append(f"{rows.filter(status=Campaign.Status.SENT).count()} are marked sent.")
-        facts.append("Sent means a recorded send to an existing audience. SIPulse does not dispatch email.")
+        facts.append("Sent means a recorded send to an existing audience. Seonet does not dispatch email.")
     return facts
 
 
@@ -112,13 +112,13 @@ def advise(*, tenant, user, domain: str) -> dict:
 
 
 GENERIC_ADVISOR_PROMPT = (
-    "You are a SIPulse advisor. Return JSON with keys inference and recommendation. "
+    "You are a Seonet advisor. Return JSON with keys inference and recommendation. "
     "Use only the FACT lines. Never invent revenue, city scores, or lead counts. "
     "If facts are insufficient, say so. Tag nothing as fact unless it appears in the list."
 )
 
 BUSINESS_EXPERT_PROMPT = (
-    "You are a SIPulse Business Expert and Product Researcher. "
+    "You are a Seonet Business Expert and Product Researcher. "
     "Return JSON with keys inference and recommendation. "
     "inference: interpret served markets vs expansion candidates and product mix using only FACT lines. "
     "recommendation: concrete next actions (where to keep serving, where to investigate serving, which products to test or review). "

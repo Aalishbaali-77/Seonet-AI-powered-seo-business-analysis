@@ -11,7 +11,7 @@ from apps.common.exceptions import APIError
 from apps.crawler.ssrf import validate_public_http_url
 
 
-USER_AGENT = "SIPulseIntegrations/1.0"
+USER_AGENT = "SeonetIntegrations/1.0"
 TIMEOUT = 12
 
 
@@ -76,7 +76,7 @@ def probe_custom_api(*, base_url: str, api_key: str, health_path: str = "", auth
 
 def probe_webhook(*, url: str, signing_secret: str) -> None:
     target = validate_public_http_url(url)
-    body = json.dumps({"event": "ping", "source": "sipulse"}).encode()
+    body = json.dumps({"event": "ping", "source": "seonet"}).encode()
     signature = hmac.new(signing_secret.encode(), body, hashlib.sha256).hexdigest()
     with _client() as client:
         response = client.post(
@@ -84,7 +84,7 @@ def probe_webhook(*, url: str, signing_secret: str) -> None:
             content=body,
             headers={
                 "Content-Type": "application/json",
-                "X-SIPulse-Signature": f"sha256={signature}",
+                "X-Seonet-Signature": f"sha256={signature}",
             },
         )
     if response.status_code >= 400:

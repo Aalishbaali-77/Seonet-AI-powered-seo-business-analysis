@@ -13,11 +13,11 @@ from apps.common.exceptions import APIError
 
 CSV_TEMPLATES = {
     "products": {
-        "filename": "sipulse-products-template.csv",
+        "filename": "seonet-products-template.csv",
         "columns": ["name", "sku", "category", "unit_price", "cost_price"],
     },
     "orders": {
-        "filename": "sipulse-orders-template.csv",
+        "filename": "seonet-orders-template.csv",
         "columns": [
             "order_id",
             "ordered_at",

@@ -18,20 +18,20 @@ const tenantSlice = createSlice({
   reducers: {
     tenantsHydrated: (state, action: PayloadAction<TenantSummary[]>) => {
       state.items = action.payload;
-      const stored = typeof window !== "undefined" ? window.localStorage.getItem("sipulse.tenant") : null;
+      const stored = typeof window !== "undefined" ? window.localStorage.getItem("seonet.tenant") : null;
       const match = action.payload.find((item) => item.id === stored);
       const preferred = match ?? action.payload.find((item) => item.is_default) ?? action.payload[0];
       if (preferred) {
         state.currentId = preferred.id;
         if (typeof window !== "undefined") {
-          window.localStorage.setItem("sipulse.tenant", preferred.id);
+          window.localStorage.setItem("seonet.tenant", preferred.id);
         }
       }
     },
     tenantSelected: (state, action: PayloadAction<string>) => {
       state.currentId = action.payload;
       if (typeof window !== "undefined") {
-        window.localStorage.setItem("sipulse.tenant", action.payload);
+        window.localStorage.setItem("seonet.tenant", action.payload);
       }
     },
   },

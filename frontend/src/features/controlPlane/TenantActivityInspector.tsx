@@ -73,7 +73,7 @@ export function TenantActivityInspector() {
       <PageHeader
         eyebrow="Platform"
         title="Tenant activity"
-        description="Prompts sent through the platform Claude/OpenAI key, Ask SIPulse questions, workspace page views, and audit events across every tenant."
+        description="Prompts sent through the platform Claude/OpenAI key, Ask Seonet questions, workspace page views, and audit events across every tenant."
       />
       <Stack direction={{ xs: "column", md: "row" }} spacing={1.5}>
         <TextField

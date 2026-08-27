@@ -6,14 +6,14 @@ from apps.platform.landing import DEFAULT_LANDING
 from apps.platform.models import PlatformAppearance, PlatformLanding
 
 DEFAULT_APPEARANCE = {
-    "product_name": "SIPulse",
-    "legal_name": "SI Global Solutions",
+    "product_name": "Seonet",
+    "legal_name": "Seonet",
     "tagline": "AI-Powered Business Growth Intelligence",
     "description": "Website intelligence, licensed keyword ranks, first-party commerce, cited markets, lead discovery, and native CRM in one tenant. Empty stays empty.",
     "support_email": "hello@siglobalsolutions.com",
     "support_url": "",
-    "login_footer": "Need a workspace? Ask SI Global Solutions to provision your tenant.",
-    "copyright_text": "© 2026 SI Global Solutions. All rights reserved.",
+    "login_footer": "Need a workspace? Ask Seonet to provision your tenant.",
+    "copyright_text": "© 2026 Seonet. All rights reserved.",
     "default_theme": PlatformAppearance.Theme.LIGHT,
     "primary_color": "#0B4F6C",
     "secondary_color": "#148A99",

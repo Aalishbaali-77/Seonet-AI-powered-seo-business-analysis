@@ -110,7 +110,7 @@ def test_csv_template_download_then_import(api_client, user, tenant):
     products = api_client.get("/api/v1/business/import/?kind=products", **headers)
     assert products.status_code == 200
     assert products["Content-Type"].startswith("text/csv")
-    assert "sipulse-products-template.csv" in products["Content-Disposition"]
+    assert "seonet-products-template.csv" in products["Content-Disposition"]
     product_text = products.content.decode("utf-8-sig")
     assert product_text.splitlines()[0] == ",".join(CSV_TEMPLATES["products"]["columns"])
     filled_products = SimpleUploadedFile(

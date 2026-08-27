@@ -299,7 +299,7 @@ def market_brief(tenant) -> dict:
         "available": bool(served or scored or _has_business_input(profile)),
         "why": (
             "This analysis uses the tenant business profile as input, then cites stored commerce rows and ingested market signals. "
-            "SIPulse does not license AlphaSense-style filings or invent city demand grades."
+            "Seonet does not license AlphaSense-style filings or invent city demand grades."
         ),
         "profile": profile,
         "subject": ", ".join(part for part in [profile.get("industry"), profile.get("category"), profile.get("current_market")] if part) or "",
@@ -320,7 +320,7 @@ def market_brief(tenant) -> dict:
 
 
 MARKET_BRIEF_PROMPT = (
-    "You are SIPulse Market Intelligence for this tenant's own business. "
+    "You are Seonet Market Intelligence for this tenant's own business. "
     "Return JSON with keys inference and recommendation. "
     "Use only FACT citations, including the saved business profile. "
     "Analyze the market for that business (industry, category, current market, goal) plus served cities and ingested signals. "

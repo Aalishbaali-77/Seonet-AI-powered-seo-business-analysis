@@ -46,7 +46,7 @@ export function ApiKeysPage({ embedded = false }: { embedded?: boolean }) {
       {embedded ? null : (
         <PageHeader
           title="API keys"
-          description="Issue a workspace token so your CRM, ERP, or automation can call the SIPulse API. The full token is shown once."
+          description="Issue a workspace token so your CRM, ERP, or automation can call the Seonet API. The full token is shown once."
           actions={
             canManage ? (
               <Button
@@ -152,7 +152,7 @@ export function ApiKeysPage({ embedded = false }: { embedded?: boolean }) {
             <DialogTitle>Copy this API token now</DialogTitle>
             <DialogContent>
               <Stack spacing={1.5} sx={{ mt: 1 }}>
-                <Alert severity="warning">SIPulse will not show the full token again.</Alert>
+                <Alert severity="warning">Seonet will not show the full token again.</Alert>
                 <TextField label="API token" value={secret} slotProps={{ input: { readOnly: true } }} />
                 <Typography variant="body2" color="text.secondary">
                   Send it as Authorization: Bearer &lt;token&gt;. Do not put it in frontend apps.

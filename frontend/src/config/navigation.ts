@@ -17,7 +17,7 @@ export type NavItem = {
 
 export const navigation: NavItem[] = [
   { id: "dashboard", label: "Dashboard", href: "/app/dashboard" },
-  { id: "ask", label: "Ask SIPulse", href: "/app/ask" },
+  { id: "ask", label: "Ask Seonet", href: "/app/ask" },
   {
     id: "business",
     label: "Business Analysis",

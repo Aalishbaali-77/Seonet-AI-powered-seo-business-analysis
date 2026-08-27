@@ -78,7 +78,7 @@ def _enqueue_audit_job(job_id: str) -> str:
             connections.close_all()
             run_website_audit(job_id)
 
-        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"sipulse-audit-{job_id}").start())
+        transaction.on_commit(lambda: Thread(target=runner, daemon=True, name=f"seonet-audit-{job_id}").start())
         return ""
     async_result = run_website_audit.delay(job_id)
     return async_result.id or ""

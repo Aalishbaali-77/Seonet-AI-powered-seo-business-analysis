@@ -59,7 +59,7 @@ def audience_count(tenant, *, audience_type: str, lead_list_id=None, city: str =
             "count": count,
             "label": item.name if item else "No lead list selected",
             "origin": "fact",
-            "why": "Count is members of an existing SIPulse lead list. No contacts are invented.",
+            "why": "Count is members of an existing Seonet lead list. No contacts are invented.",
         }
     if audience_type == "commerce_city":
         place = (city or "").strip()

@@ -14,7 +14,7 @@ def resolve_request_tenant(request):
     if user is None or not user.is_authenticated:
         request.tenant = getattr(request, "tenant", None)
         return request.tenant
-    tenant_id = request.headers.get("X-Tenant-ID") or request.COOKIES.get("sipulse_tenant")
+    tenant_id = request.headers.get("X-Tenant-ID") or request.COOKIES.get("seonet_tenant")
     path = getattr(request, "path", "") or ""
     if path.startswith("/api/v1/platform/"):
         request.tenant = None

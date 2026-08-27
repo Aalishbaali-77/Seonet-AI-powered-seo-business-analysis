@@ -78,7 +78,7 @@ export function OpportunityListPage() {
           ]}
         />
       ) : (
-        <EmptyState title="No opportunities yet" description="Record one from business or market evidence. SIPulse will not auto-create Lahore=92 style rows without signals." />
+        <EmptyState title="No opportunities yet" description="Record one from business or market evidence. Seonet will not auto-create Lahore=92 style rows without signals." />
       )}
       <Dialog open={open} onClose={() => setOpen(false)} fullWidth maxWidth="sm">
         <DialogTitle>Record opportunity</DialogTitle>
@@ -197,7 +197,7 @@ export function OpportunityDetailPage() {
       <Typography>Recommended action: {item.recommended_action}</Typography>
       {item.potential_impact ? <Typography>Impact: {item.potential_impact}</Typography> : null}
       <Typography variant="h4">Linked leads</Typography>
-      <Typography color="text.secondary">Link existing SIPulse leads. Discovery stays in Leads. Empty here means no members for an opportunity campaign.</Typography>
+      <Typography color="text.secondary">Link existing Seonet leads. Discovery stays in Leads. Empty here means no members for an opportunity campaign.</Typography>
       {linked.length ? (
         <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", gap: 1 }}>
           {linked.map((lead) => (

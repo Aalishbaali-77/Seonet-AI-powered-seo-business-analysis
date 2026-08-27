@@ -1,5 +1,5 @@
 # ============================================================
-# SIPulse - Enterprise SaaS Platform
+# Seonet - Enterprise SaaS Platform
 # Python / Django + Next.js + Docker
 # ============================================================
 
@@ -241,7 +241,7 @@ pnpm-debug.log*
 # If you want specific documentation files committed,
 # use ! rules below.
 
-# Keep the SIPulse SRS document
+# Keep the Seonet SRS document
 !Enterprise SaaS Business Intelligence, Website Audit, AI Lead Generation & CRM Automation Platform — Software Requirements Specification.md
 
 # ------------------------------------------------------------

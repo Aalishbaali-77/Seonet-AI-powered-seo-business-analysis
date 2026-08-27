@@ -44,7 +44,7 @@ export function WorkspaceShell({
 
   useEffect(() => {
     if (tenantId) {
-      window.localStorage.setItem("sipulse.tenant", tenantId);
+      window.localStorage.setItem("seonet.tenant", tenantId);
     }
   }, [tenantId]);
 

@@ -22,9 +22,9 @@ export function PrintReportChrome({
   const printed = new Date().toLocaleString();
 
   return (
-    <Stack spacing={3} className="sipulse-print-root">
+    <Stack spacing={3} className="seonet-print-root">
       <Box
-        className="sipulse-print-header"
+        className="seonet-print-header"
         sx={{
           display: "none",
           "@media print": { display: "flex" },
@@ -53,7 +53,7 @@ export function PrintReportChrome({
       </Stack>
       {children}
       <Box
-        className="sipulse-print-footer"
+        className="seonet-print-footer"
         sx={{
           display: "none",
           "@media print": { display: "flex" },

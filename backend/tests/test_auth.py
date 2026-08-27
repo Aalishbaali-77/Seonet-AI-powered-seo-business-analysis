@@ -24,7 +24,7 @@ def test_register_creates_tenant_and_owner(api_client):
     assert user.memberships.count() == 1
     membership = user.memberships.get()
     assert membership.membership_roles.filter(role__code="owner").exists()
-    assert "sipulse_access" in response.cookies
+    assert "seonet_access" in response.cookies
     assert AuditLog.objects.filter(action="TENANT_CREATED").exists()
 
 

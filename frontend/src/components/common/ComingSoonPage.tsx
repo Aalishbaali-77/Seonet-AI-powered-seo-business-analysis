@@ -15,7 +15,7 @@ export function ComingSoonPage({
       <PageHeader title={title} description={description} />
       <EmptyState
         title={`${title} is not enabled yet`}
-        description="This module is part of the SIPulse roadmap. The navigation is in place so the product can grow without fake data."
+        description="This module is part of the Seonet roadmap. The navigation is in place so the product can grow without fake data."
       />
     </>
   );

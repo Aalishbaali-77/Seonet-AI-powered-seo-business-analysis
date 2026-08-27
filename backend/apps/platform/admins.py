@@ -36,8 +36,8 @@ def send_platform_admin_invite_email(user) -> None:
     uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = default_token_generator.make_token(user)
     send_mail(
-        subject="You've been added as a SIPulse platform admin",
-        message=f"You were added as a SIPulse platform admin. Set your password: {_reset_url(uid, token)}",
+        subject="You've been added as a Seonet platform admin",
+        message=f"You were added as a Seonet platform admin. Set your password: {_reset_url(uid, token)}",
         from_email=settings.DEFAULT_FROM_EMAIL,
         recipient_list=[user.email],
         fail_silently=True,
@@ -48,7 +48,7 @@ def send_platform_admin_reset_email(user) -> None:
     uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = default_token_generator.make_token(user)
     send_mail(
-        subject="Reset your SIPulse platform admin password",
+        subject="Reset your Seonet platform admin password",
         message=f"Reset your password: {_reset_url(uid, token)}",
         from_email=settings.DEFAULT_FROM_EMAIL,
         recipient_list=[user.email],

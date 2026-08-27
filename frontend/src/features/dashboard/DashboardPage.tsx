@@ -84,7 +84,7 @@ export function DashboardPage() {
             <ScoreCard label="AEO score" value={data.intelligence.aeo_score} onClick={() => router.push("/app/aeo")} />
             <ScoreCard label="GEO score" value={data.intelligence.geo_score} onClick={() => router.push("/app/aeo")} />
             <ScoreCard
-              label="SIPulse Performance"
+              label="Seonet Performance"
               value={data.intelligence.performance_score}
               hint="Crawl TTFB and technical health"
               onClick={() => router.push("/app/performance")}
@@ -246,7 +246,7 @@ export function DashboardPage() {
           {(data.overview.growth_opportunities ?? 0) === 0 && modules.includes("opportunities") ? (
             <EmptyState
               title="No growth opportunities"
-              description="Record evidence from imported orders or ingested market signals. SIPulse will not invent city grades."
+              description="Record evidence from imported orders or ingested market signals. Seonet will not invent city grades."
               actionLabel="Open opportunities"
               onAction={() => router.push("/app/opportunities")}
             />

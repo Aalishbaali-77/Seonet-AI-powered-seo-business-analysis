@@ -223,7 +223,7 @@ class LeadExportView(LeadModule, APIView):
     def get(self, request):
         qs = filtered_leads(request).order_by("company_name", "id")
         response = HttpResponse(content_type="text/csv; charset=utf-8")
-        response["Content-Disposition"] = 'attachment; filename="sipulse-leads.csv"'
+        response["Content-Disposition"] = 'attachment; filename="seonet-leads.csv"'
         writer = csv.writer(response)
         writer.writerow(
             [

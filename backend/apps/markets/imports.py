@@ -17,7 +17,7 @@ def csv_template() -> tuple[str, str]:
     buf = io.StringIO()
     writer = csv.writer(buf, lineterminator="\n")
     writer.writerow(CSV_COLUMNS)
-    return "sipulse-market-signals-template.csv", "\ufeff" + buf.getvalue()
+    return "seonet-market-signals-template.csv", "\ufeff" + buf.getvalue()
 
 
 def decode_csv_bytes(raw: bytes) -> str:

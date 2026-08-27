@@ -58,7 +58,7 @@ export function AskPage() {
   return (
     <Stack spacing={3}>
       <PageHeader
-        title="Ask SIPulse"
+        title="Ask Seonet"
         description="Counts stay allowlisted. Market and business questions run analysis on this tenant's saved profile, orders, and ingested signals — they do not invent city grades or next-year revenue."
       />
       <TextField

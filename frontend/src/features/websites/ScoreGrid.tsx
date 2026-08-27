@@ -10,7 +10,7 @@ const LABELS: Record<string, string> = {
   content: "Content",
   aeo: "AEO",
   geo: "GEO",
-  performance: "SIPulse Performance",
+  performance: "Seonet Performance",
   technical_performance: "Technical Performance",
   ux_cwv: "UX / CWV",
   accessibility: "Accessibility",

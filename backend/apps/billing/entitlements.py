@@ -296,7 +296,7 @@ def payment_method_payload() -> dict:
             "method": card.provider,
             "gateway_name": card.display_name,
             "card_available": True,
-            "instructions": f"Pay this invoice with {card.display_name}. SIPulse opens the gateway checkout and marks the invoice paid when that gateway confirms collection.",
+            "instructions": f"Pay this invoice with {card.display_name}. Seonet opens the gateway checkout and marks the invoice paid when that gateway confirms collection.",
         }
     gateway = PaymentGateway.objects.filter(is_default=True).first() or PaymentGateway.objects.filter(is_enabled=True).first()
     if gateway is None:

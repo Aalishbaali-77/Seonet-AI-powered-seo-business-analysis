@@ -28,7 +28,7 @@ type JobSessionContextValue = {
   dismiss: () => void;
 };
 
-const STORAGE_KEY = "sipulse.auditJob";
+const STORAGE_KEY = "seonet.auditJob";
 const JobSessionContext = createContext<JobSessionContextValue | null>(null);
 
 function asSession(input: StartInput): JobSession {

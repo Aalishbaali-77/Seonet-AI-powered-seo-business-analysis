@@ -7,7 +7,7 @@ import httpx
 
 from apps.common.exceptions import APIError
 
-USER_AGENT = "SIPulseCommerce/1.0"
+USER_AGENT = "SeonetCommerce/1.0"
 TIMEOUT = 20
 PAGE_LIMIT = 50
 

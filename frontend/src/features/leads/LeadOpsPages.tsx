@@ -35,7 +35,7 @@ export function LeadListsPage() {
     <Stack spacing={3}>
       <PageHeader
         title="Lead lists"
-        description="Saved groups of existing SIPulse leads. Lists do not invent new companies."
+        description="Saved groups of existing Seonet leads. Lists do not invent new companies."
         actions={
           <Stack direction="row" spacing={1}>
             <TextField size="small" label="List name" value={name} onChange={(event) => setName(event.target.value)} />

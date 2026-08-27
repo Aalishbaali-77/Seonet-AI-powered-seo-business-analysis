@@ -12,7 +12,7 @@ from apps.markets.catalog import ensure_geo_catalog
 from apps.markets.models import GeoPlace, MarketSignal
 from providers.ai.base import ProviderUnavailable
 
-USER_AGENT = "SIPulseBot/1.0 (market-collect; +https://sipulse.local)"
+USER_AGENT = "SeonetBot/1.0 (market-collect; +https://seonet.local)"
 OVERPASS_URLS = (
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",

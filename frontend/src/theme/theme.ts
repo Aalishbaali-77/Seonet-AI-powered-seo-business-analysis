@@ -14,7 +14,7 @@ function hex(value: string | undefined, fallback: string) {
   return value && HEX.test(value) ? value : fallback;
 }
 
-export function createSipulseTheme(mode: PaletteMode, brand?: { primary?: string; secondary?: string }) {
+export function createSeonetTheme(mode: PaletteMode, brand?: { primary?: string; secondary?: string }) {
   const surface = mode === "light" ? colors.light : colors.dark;
   const primary = hex(brand?.primary, colors.brand.navy);
   const secondary = hex(brand?.secondary, colors.brand.teal);

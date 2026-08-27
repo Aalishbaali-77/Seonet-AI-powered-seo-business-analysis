@@ -330,7 +330,7 @@ export function JobProgressPanel({ job, error, kind }: { job: Job | null; error?
         <Box
           sx={{
             position: "relative",
-            "@keyframes sipulseGlow": {
+            "@keyframes seonetGlow": {
               "0%, 100%": { opacity: 0.45, transform: "scale(0.92)" },
               "50%": { opacity: 1, transform: "scale(1.06)" },
             },
@@ -342,7 +342,7 @@ export function JobProgressPanel({ job, error, kind }: { job: Job | null; error?
               background: failed
                 ? "radial-gradient(circle, rgba(192,57,43,0.28), transparent 68%)"
                 : "radial-gradient(circle, rgba(46,196,182,0.32), transparent 68%)",
-              animation: !complete && !failed ? "sipulseGlow 2.4s ease-in-out infinite" : "none",
+              animation: !complete && !failed ? "seonetGlow 2.4s ease-in-out infinite" : "none",
               pointerEvents: "none",
             },
           }}
@@ -385,11 +385,11 @@ export function JobProgressPanel({ job, error, kind }: { job: Job | null; error?
                     color: done ? "secondary.main" : failedHere ? "error.main" : active ? "secondary.main" : "text.disabled",
                     border: done || failedHere ? "none" : "2px solid",
                     borderColor: active ? "secondary.main" : "divider",
-                    "@keyframes sipulseDot": {
+                    "@keyframes seonetDot": {
                       "0%, 100%": { boxShadow: "0 0 0 0 rgba(20,138,153,0.4)" },
                       "50%": { boxShadow: "0 0 0 7px rgba(20,138,153,0)" },
                     },
-                    animation: active ? "sipulseDot 1.6s ease-out infinite" : "none",
+                    animation: active ? "seonetDot 1.6s ease-out infinite" : "none",
                   }}
                 >
                   {done ? (

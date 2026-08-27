@@ -17,7 +17,7 @@ function downloadJson(report: AuditReport) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${report.website.domain}-sipulse-audit.json`;
+  link.download = `${report.website.domain}-seonet-audit.json`;
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -42,7 +42,7 @@ function downloadCsv(report: AuditReport) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${report.website.domain}-sipulse-issues.csv`;
+  link.download = `${report.website.domain}-seonet-issues.csv`;
   link.click();
   URL.revokeObjectURL(url);
 }

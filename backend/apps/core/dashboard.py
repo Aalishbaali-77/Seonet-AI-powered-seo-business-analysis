@@ -180,7 +180,7 @@ class WorkspaceReportsExportView(APIView):
             from django.http import HttpResponse
 
             response = HttpResponse(content_type="text/csv; charset=utf-8")
-            response["Content-Disposition"] = 'attachment; filename="sipulse-reports.csv"'
+            response["Content-Disposition"] = 'attachment; filename="seonet-reports.csv"'
             writer = csv.writer(response)
             writer.writerow(["code", "title", "count", "available", "href", "why"])
             for row in rows:
