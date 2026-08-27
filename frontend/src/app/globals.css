@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media print {
+  html,
+  body {
+    overflow: visible;
+    max-width: none;
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .sipulse-print-header,
+  .sipulse-print-footer {
+    display: flex !important;
+  }
+
+  .sipulse-print-root {
+    padding: 0 !important;
+  }
+}
+

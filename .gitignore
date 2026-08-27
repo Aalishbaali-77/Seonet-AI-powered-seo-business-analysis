@@ -1,0 +1,286 @@
+# ============================================================
+# SIPulse - Enterprise SaaS Platform
+# Python / Django + Next.js + Docker
+# ============================================================
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+
+*.secret
+*.secrets
+secrets/
+credentials/
+*.pem
+*.key
+*.crt
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging
+build/
+dist/
+downloads/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Coverage / testing
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# Django
+# ------------------------------------------------------------
+*.log
+*.pot
+*.pyc
+
+# Django static/media generated locally
+staticfiles/
+media/
+
+# Local SQLite database
+db.sqlite3
+db.sqlite3-journal
+
+# Django migrations:
+# Keep migrations under version control.
+# DO NOT ignore migrations.
+
+# ------------------------------------------------------------
+# Node / Next.js
+# ------------------------------------------------------------
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+.yarn-cache/
+.yarn-integrity
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel/
+
+# Production builds
+dist/
+build/
+
+# NPM logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------------------------------------------
+# Frontend caches
+# ------------------------------------------------------------
+.turbo/
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# ------------------------------------------------------------
+# TypeScript
+# ------------------------------------------------------------
+*.tsbuildinfo
+
+# ------------------------------------------------------------
+# Testing / E2E
+# ------------------------------------------------------------
+coverage/
+playwright-report/
+test-results/
+.nyc_output/
+
+# ------------------------------------------------------------
+# Docker
+# ------------------------------------------------------------
+docker-volumes/
+docker-data/
+docker-data/*
+*.pid
+
+# Local Docker database/storage
+postgres-data/
+redis-data/
+rabbitmq-data/
+mysql-data/
+mariadb-data/
+
+# ------------------------------------------------------------
+# Celery
+# ------------------------------------------------------------
+celerybeat.pid
+celerybeat-schedule
+
+# ------------------------------------------------------------
+# IDE / Editors
+# ------------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS Code local settings
+.history/
+.code-workspace
+
+# ------------------------------------------------------------
+# OS generated files
+# ------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ------------------------------------------------------------
+# Temporary files
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+
+tmp/
+temp/
+.cache/
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ------------------------------------------------------------
+# Local AI / Cursor
+# ------------------------------------------------------------
+.cursor/
+.cursorignore
+
+# Keep project-level AI instructions if intentionally committed.
+# Uncomment if you want to ignore them:
+# .cursorrules
+
+# ------------------------------------------------------------
+# Local development files
+# ------------------------------------------------------------
+.local/
+.local.*
+*.local
+
+# ------------------------------------------------------------
+# Generated documentation / exports
+# ------------------------------------------------------------
+*.pdf
+*.docx
+*.xlsx
+*.csv
+
+# IMPORTANT:
+# If you want specific documentation files committed,
+# use ! rules below.
+
+# Keep the SIPulse SRS document
+!Enterprise SaaS Business Intelligence, Website Audit, AI Lead Generation & CRM Automation Platform — Software Requirements Specification.md
+
+# ------------------------------------------------------------
+# Database / backups
+# ------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+*.dump
+*.bak
+
+# ------------------------------------------------------------
+# Security / certificates
+# ------------------------------------------------------------
+*.pem
+*.p12
+*.pfx
+*.jks
+
+# ------------------------------------------------------------
+# Generated frontend assets
+# ------------------------------------------------------------
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+
+# ------------------------------------------------------------
+# Generated backend files
+# ------------------------------------------------------------
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/staticfiles/
+backend/media/
+
+# ------------------------------------------------------------
+# Keep important empty directories if required
+# ------------------------------------------------------------
+!.gitkeep
+# TypeScript build cache
+*.tsbuildinfo

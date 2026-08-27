@@ -1,0 +1,116 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: sipulse
+      POSTGRES_USER: sipulse
+      POSTGRES_PASSWORD: sipulse
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sipulse"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: sipulse
+      RABBITMQ_DEFAULT_PASS: sipulse
+      RABBITMQ_DEFAULT_VHOST: sipulse
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    env_file:
+      - .env.example
+    environment:
+      DJANGO_ENV: development
+      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      REDIS_URL: redis://redis:6379/0
+      RABBITMQ_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    env_file:
+      - .env.example
+    environment:
+      DJANGO_ENV: development
+      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+    depends_on:
+      - backend
+      - rabbitmq
+      - redis
+    command: celery -A config.celery worker -l INFO
+
+  beat:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    env_file:
+      - .env.example
+    environment:
+      DJANGO_ENV: development
+      DATABASE_URL: postgres://sipulse:sipulse@postgres:5432/sipulse
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: amqp://sipulse:sipulse@rabbitmq:5672/sipulse
+      CELERY_RESULT_BACKEND: redis://redis:6379/1
+    depends_on:
+      - backend
+      - rabbitmq
+    command: celery -A config.celery beat -l INFO
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
